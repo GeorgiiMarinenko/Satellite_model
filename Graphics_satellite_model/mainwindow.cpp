@@ -86,20 +86,28 @@ void    MainWindow::ReadFile()
     QFile file("/Users/georgy/Desktop/fileout.txt");
     QStringList strList;
     QTextStream str(&file);
+    TVector Vec[100];
+    int j = 0;
 
-    if((file.exists())&&(file.open(QIODevice::ReadOnly)))
+    file.open(QIODevice::ReadOnly);
+    foreach (QString i,QString(file.readAll()).split(QRegExp("[\r\n]"),QString::SkipEmptyParts))
     {
-        while(!file.atEnd())
-        {
-            strList << file.readLine();
-        }
+        QPoint pos;
+        pos.setX(i.section(" ",0,0).toDouble());
+        pos.setY(i.section(" ",1,1).toDouble());
+        //----------------------------------------
+        Vec[j].x0 = i.section(" ",0,0).toDouble();
+        Vec[j].x1 = i.section(" ",1,1).toDouble();
+        Vec[j].x2 = i.section(" ",2,2).toDouble();
+        Vec[j].x3 = i.section(" ",3,3).toDouble();
+        Vec[j].x4 = i.section(" ",4,4).toDouble();
+        Vec[j].x5 = i.section(" ",5,5).toDouble();
+        // draw something here, pos holds your coords in x as first valur and in y second (pos.x(), pos.y() )
+//        qDebug() << pos;
+        qDebug() << Vec[j].x0 << Vec[j].x1 << Vec[j].x2 << Vec[j].x3 << Vec[j].x4 << Vec[j].x5;
+        j++;
     }
-    else
-    {
-        qDebug() << "Error";
-        return;
-    }
-    ui->textBrowser->setText(strList[2]);
+    file.close();
 }
 
 

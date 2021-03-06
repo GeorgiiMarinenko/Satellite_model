@@ -20,6 +20,16 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+struct TVector
+{
+    double	x0;
+    double	x1;
+    double	x2;
+    double	x3;
+    double	x4;
+    double	x5;
+};
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
