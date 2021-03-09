@@ -1,5 +1,5 @@
 #include <math.h>
-# define W 39860300000
+# define W 398603000000000.0
 
 struct	TVector
 {
