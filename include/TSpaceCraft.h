@@ -1,7 +1,6 @@
 #ifndef TSPACECRAFT_H
 #define TSPACECRAFT_H
 #include "TDynamicModel.h"
-#include <iostream>
 #include <math.h>
 using namespace std;
 
@@ -10,19 +9,17 @@ class TSpaceCraft:public TDynamicModel
 private:
 	double FindRadius();
 public:
-	TSpaceCraft(/* args */);
+	TSpaceCraft();
 	~TSpaceCraft();
 
 	TVector RightParts() override;
 };
 
-TSpaceCraft::TSpaceCraft(/* args */)
-{
-}
+TSpaceCraft::TSpaceCraft()
+{}
 
 TSpaceCraft::~TSpaceCraft()
-{
-}
+{}
 
 TVector TSpaceCraft::RightParts()
 {
@@ -34,9 +31,6 @@ TVector TSpaceCraft::RightParts()
 	NewVector.x4 = -1 * W * vector.x1 / pow(FindRadius(), 3);
 	NewVector.x5 = -1 * W * vector.x2 / pow(FindRadius(), 3);
 
-	// cout << NewVector.x0 << " " << NewVector.x1 << " " << NewVector.x2 << " " << NewVector.x3
-	// << " " << NewVector.x4 << " " << NewVector.x5 << endl;
-	// cout << FindRadius() << endl << "_____________________" << endl;
 	return (NewVector);
 }
 

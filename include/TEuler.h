@@ -7,8 +7,6 @@ using namespace std;
 
 class TEuler:public TAbstractIntegrator
 {
-private:
-	/* data */
 public:
 	TEuler(TDynamicModel *Model);
 	~TEuler();
@@ -18,21 +16,17 @@ public:
 };
 
 TEuler::TEuler(TDynamicModel *Model) : TAbstractIntegrator(Model)
-{
-}
+{}
 
 TEuler::~TEuler()
-{
-}
+{}
 
 TVector TEuler::OneStep()
 {
 	TVector NewVec;
 	NewVec = Model->GetVector() + Model->RightParts()*step;
 	Model->SetVector(NewVec);
-	// cout << NewVec.x3 << endl;
-	// cout << "Vec: " << NewVec.x0 << " " << NewVec.x1 << " " << NewVec.x2 << " " << NewVec.x3 << " "
-	// << NewVec.x4 << " " << NewVec.x5 << endl << "_________ " << endl;
+
 	return (NewVec);
 }
 

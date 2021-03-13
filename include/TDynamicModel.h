@@ -7,7 +7,7 @@ class TDynamicModel
 protected:
 	TVector vector;
 public:
-	TDynamicModel(/* args */);
+	TDynamicModel();
 	~TDynamicModel();
 
 	virtual TVector	RightParts() = 0;
@@ -15,13 +15,11 @@ public:
 	TVector	GetVector();
 };
 
-TDynamicModel::TDynamicModel(/* args */)
-{
-}
+TDynamicModel::TDynamicModel()
+{}
 
 TDynamicModel::~TDynamicModel()
-{
-}
+{}
 
 void TDynamicModel::SetVector(TVector vector)
 {

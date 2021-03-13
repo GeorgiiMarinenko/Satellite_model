@@ -19,10 +19,10 @@ int main(void)
 	model->SetVector(Vec);
 	TAbstractIntegrator * integTEuler = new TEuler(model);
 	TAbstractIntegrator * integRungeKutta = new TRungeKutta(model);
+
 	integRungeKutta->step = 1;
 	integRungeKutta->start_time = 0;
-	// integ->end_time = 10000;
-	integRungeKutta->end_time = 1500000;
+	integRungeKutta->end_time = 750000;
 	integRungeKutta->MoveTo();
 
 

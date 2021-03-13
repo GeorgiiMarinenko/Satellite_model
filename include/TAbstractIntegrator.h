@@ -25,7 +25,5 @@ TAbstractIntegrator::TAbstractIntegrator(TDynamicModel *Model)
 }
 
 TAbstractIntegrator::~TAbstractIntegrator()
-{
-}
-
+{}
 #endif

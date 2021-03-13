@@ -7,8 +7,6 @@ using namespace std;
 
 class TRungeKutta:public TAbstractIntegrator
 {
-private:
-	/* data */
 public:
 	TRungeKutta(TDynamicModel *Model);
 	~TRungeKutta();
@@ -18,12 +16,10 @@ public:
 };
 
 TRungeKutta::TRungeKutta(TDynamicModel *Model) : TAbstractIntegrator(Model)
-{
-}
+{}
 
 TRungeKutta::~TRungeKutta()
-{
-}
+{}
 
 TVector TRungeKutta::OneStep()
 {
